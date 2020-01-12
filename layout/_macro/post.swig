@@ -46,6 +46,12 @@
           {%- set time_diff = time(post.date) != time(post.updated) %}
           {%- set datetime_diff = date_diff or time_diff %}
 
+          {% if post.top %}
+            <i class="fa fa-thumb-tack"></i>
+            <font color=7D26CD>{{ __('post.sticky') }}</font>
+            <span class="post-meta-divider">|</span>
+          {% endif %}
+
           {%- if theme.post_meta.created_at %}
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,7 +243,7 @@
           {%- endif %}
           <div class="post-tags">
             {%- for tag in post.tags.toArray() %}
-              <a href="{{ url_for(tag.path) }}" rel="tag">{{ tag_indicate }} {{ tag.name }}</a>
+              <a href="{{ url_for(tag.path) }}" rel="tag"> <i class="fa fa-tag"></i> {{ tag.name }}</a>
             {%- endfor %}
           </div>
         {%- endif %}
