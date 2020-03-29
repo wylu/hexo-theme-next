@@ -211,6 +211,7 @@
           {{ post.content }}
         {%- endif %}
       {% else %}
+        {{ partial('_custom/google-adsense.swig') }}
         {{ post.content }}
       {%- endif %}
     </div>
