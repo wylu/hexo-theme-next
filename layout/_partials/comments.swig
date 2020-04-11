@@ -81,5 +81,3 @@
     });
   }
 </script>
-
-{{ partial('_custom/google-adsense.swig') }}
